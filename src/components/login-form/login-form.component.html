@@ -1,0 +1,31 @@
+<form #loginForm="ngForm" novalidate>
+    <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label floating  >Email Address</ion-label>
+            <ion-input [(ngModel)]="account.email" 
+                       name="email" 
+                       #email="ngModel" 
+                       class="form-control"
+                       type="email"
+                       required>
+            </ion-input>
+
+          </ion-item>
+          <ion-item>
+              <ion-label floating  > Password</ion-label>
+              <ion-input [(ngModel)]="account.password" 
+                         name="pwd" 
+                         #pwd="ngModel" 
+                         type="password"
+                         class="form-control"
+                         required>
+              </ion-input>
+            </ion-item>
+        </ion-card-content>
+        <ion-row class="login-form__buttons">
+          <button ion-button (click)="navigateToPage('RegisterPage')">Register</button>
+          <button ion-button (click)="login()" >Login</button> 
+        </ion-row>
+      </ion-card>
+</form>
